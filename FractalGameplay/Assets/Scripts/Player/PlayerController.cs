@@ -4,14 +4,14 @@ public class PlayerController : MonoBehaviour
 {
     private Player player;
     private Rigidbody2D rigidbody;
-    private Animator animator;
+    //private Animator animator;
 
     //get component Rigidbody when game started
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         rigidbody = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
         rigidbody.velocity = new Vector2(player.moveInput * player.playerSpeed, rigidbody.velocity.y);
 
-        animator.SetBool("IsMoving", player.moveInput * player.playerSpeed != 0);
+        //animator.SetBool("IsMoving", player.moveInput * player.playerSpeed != 0);
 
     }
 
