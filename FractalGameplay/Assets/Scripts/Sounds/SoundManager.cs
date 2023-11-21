@@ -7,16 +7,11 @@ public class SoundManager : MonoBehaviour
     public PlayerController playerController;
     public AudioSource playerWalkingSound;
 
-    void Awake()
-    {
-        //playerController = gameObject.GetComponent<PlayerController>();
-    }
-
     void Update()
     {
         if (playerController.isMoving)
-        {
-            playerWalkingSound.Play();
-        }
+            playerWalkingSound.enabled = true;
+        else
+            playerWalkingSound.enabled = false;
     }
 }
