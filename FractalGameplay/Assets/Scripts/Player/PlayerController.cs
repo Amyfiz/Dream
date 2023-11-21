@@ -3,14 +3,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Player player;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rb;
     //private Animator animator;
 
     //get component Rigidbody when game started
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
     }
 
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         player.isGrounded =
             Physics2D.OverlapCircle(player.feetPosition.position, player.checkRadius, player.whatIsGrounded);
 
-        rigidbody.velocity = new Vector2(player.moveInput * player.playerSpeed, rigidbody.velocity.y);
+        rb.velocity = new Vector2(player.moveInput * player.playerSpeed, rb.velocity.y);
 
         //animator.SetBool("IsMoving", player.moveInput * player.playerSpeed != 0);
 
