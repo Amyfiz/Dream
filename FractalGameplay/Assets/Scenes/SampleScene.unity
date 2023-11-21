@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 1371583170}
   - component: {fileID: 1371583171}
   m_Layer: 0
-  m_Name: TEMPPlayerTexture
+  m_Name: PlayerTexture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -860,7 +860,7 @@ Transform:
   m_GameObject: {fileID: 1371583169}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2123225009}
@@ -907,7 +907,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e2a9c63283c5c5a47b66524cf1c75f9f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3ce42acd839427d409bc869629a9d2e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
