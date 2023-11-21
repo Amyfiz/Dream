@@ -1,11 +1,9 @@
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
-using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private Player player;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rb;
     //private Animator animator;
     public bool isMoving;
 
@@ -13,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         player = gameObject.GetComponent<Player>();
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
     }
 
@@ -22,7 +20,7 @@ public class PlayerController : MonoBehaviour
         player.isGrounded =
             Physics2D.OverlapCircle(player.feetPosition.position, player.checkRadius, player.whatIsGrounded);
 
-        rigidbody.velocity = new Vector2(player.moveInput * player.playerSpeed, rigidbody.velocity.y);
+        rb.velocity = new Vector2(player.moveInput * player.playerSpeed, rb.velocity.y);
 
         if (player.moveInput != 0)
         {
@@ -36,7 +34,6 @@ public class PlayerController : MonoBehaviour
         //animator.SetBool("IsMoving", player.moveInput * player.playerSpeed != 0);
     }
 
-    //flipping player texture
     private void PlayerFlip()
     {
         player.facingRight = !player.facingRight;
@@ -44,9 +41,7 @@ public class PlayerController : MonoBehaviour
         scaler.x *= -1;
         transform.localScale = scaler;
     }
-
-
-
+    
     private void FixedUpdate()
     {
         player.moveInput = Input.GetAxis("Horizontal");
