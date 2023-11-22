@@ -4,7 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     private Player player;
     private Rigidbody2D rb;
-    //private Animator animator;
+    private Animator animator;
     public bool isMoving;
 
     //get component Rigidbody when game started
@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     {
         player = gameObject.GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
             isMoving = false;
         }
 
-        //animator.SetBool("IsMoving", player.moveInput * player.playerSpeed != 0);
+        animator.SetBool("IsMoving", player.moveInput * player.playerSpeed != 0);
     }
 
     private void PlayerFlip()
