@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InteractableObject : MonoBehaviour, IInteractable
 {
     private Collider2D clldr;
     private Player player;  
     
-
-
+    public Animator startAnimation;
+    
     void Awake()
     {
         clldr = gameObject.GetComponent<Collider2D>();
@@ -23,9 +20,21 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (clldr.IsTouching(player.GetComponent<Collider2D>()) && Input.GetKeyDown(KeyCode.F))
+        if (clldr.IsTouching(player.GetComponent<Collider2D>()))
         {
-            //Instantiate(gameObject.GetComponent<Text>());
+            startAnimation.SetBool("IsOpen", true);
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                //Делать неебенную хуйню так шоб все ахуели
+                startAnimation.SetBool("IsOpen", false);
+                Debug.Log("boom");
+                //А еще разрушать объект после этого
+            }
+        }
+        else
+        {
+            startAnimation.SetBool("IsOpen", false);
         }
     }
 
