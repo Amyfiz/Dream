@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI nameText;
+    //[SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI dialogueText;
     
     private PlayerController playerController;
@@ -41,7 +41,7 @@ public class DialogueManager : MonoBehaviour
         currentDialogueEntity = dialogueEntity;
         
         animator.SetBool(AnimatorConstants.IsOpen, true);
-        nameText.text = currentDialogueEntity.name;
+        //nameText.text = currentDialogueEntity.name;
 
         SentenceQueue.Clear();
 
