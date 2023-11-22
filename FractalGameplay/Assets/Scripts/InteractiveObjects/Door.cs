@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Door : MonoBehaviour, IInteractable
@@ -7,6 +8,9 @@ public class Door : MonoBehaviour, IInteractable
 
     private Collider2D clldr;
     private Player player;
+
+    [SerializeField] Animator transition;
+    [SerializeField] float transitionTime;
 
     void Awake()
     {
@@ -21,14 +25,23 @@ public class Door : MonoBehaviour, IInteractable
     
     public void Interact()
     {
-        if (clldr.IsTouching(player.GetComponent<Collider2D>()))
+        if (clldr.IsTouching(player.GetComponent<Collider2D>()) && Input.GetKeyDown(KeyCode.F))
         {
-            //Debug.Log("touching");
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                player.transform.position = new Vector3(newX, newY, player.transform.position.z);
-                Debug.Log("im working bitch");
-            }
+            TeleportPlayer();
         }
+    }
+
+
+    public void TeleportPlayer()
+    {
+        StartCoroutine(Transition());
+        player.transform.position = new Vector3(newX, newY, player.transform.position.z);
+    }
+
+    IEnumerator Transition()
+    {
+        transition.SetTrigger("Start");
+        transition.SetTrigger("Finish");
+        yield return new WaitForSeconds(transitionTime);
     }
 }
