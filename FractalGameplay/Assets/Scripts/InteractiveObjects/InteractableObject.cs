@@ -33,6 +33,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
         {
             canInteract = true;
             interactAnimation.SetBool("IsOpen", true);
+            openObject.gameObject.SetActive(true);
         }
     }
 
@@ -60,9 +61,6 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
         if (!isDialogueBoxOpen)
         {
-            openObject.gameObject.SetActive(true);
-            Debug.Log("геймобджект активирован");
-            
             interactAnimation.SetBool("IsOpen", false);
 
             if (openObject.GetComponent<DialogueAnimator>() != null)
@@ -72,6 +70,8 @@ public class InteractableObject : MonoBehaviour, IInteractable
             }
             else
             {
+                //Делать неебенную хуйню так шоб все ахуели
+                interactAnimation.SetBool("IsOpen", false);
                 Debug.Log("Закрываем Фку, открываем окошко");
                 //А еще разрушать объект после этого
             }
