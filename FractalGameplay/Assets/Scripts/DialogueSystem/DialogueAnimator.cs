@@ -6,7 +6,7 @@ public class DialogueAnimator : MonoBehaviour
 {
     public Animator startAnimation;
 
-    [FormerlySerializedAs("dialogue")] public DialogueEntity dialogueEntity;
+    public DialogueEntity dialogueEntity;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
