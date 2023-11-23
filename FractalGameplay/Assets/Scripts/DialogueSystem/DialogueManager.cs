@@ -88,5 +88,6 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool(AnimatorConstants.IsOpen, false);
         StopAllCoroutines();
         animator.SetBool(AnimatorConstants.IsOpen, false);
+        
     }
 }

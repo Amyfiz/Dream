@@ -7,10 +7,9 @@ public class InteractableObject : MonoBehaviour, IInteractable
     private Collider2D clldr;
     private Player player;
     private GameObject openObject;
+    private bool isDialogueBoxOpen;
     
     public Animator interactAnimation;
-    public Animator dialogueBoxAnimation;
-    public 
     
     void Awake()
     {
@@ -26,20 +25,27 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (clldr.IsTouching(player.GetComponent<Collider2D>()))
+        if (openObject.GetComponent<DialogueAnimator>() != null)
+        {
+            isDialogueBoxOpen = openObject.GetComponent<DialogueAnimator>().startAnimation.GetBool("IsOpen");
+        }
+        
+        if (clldr.IsTouching(player.GetComponent<Collider2D>()) && !isDialogueBoxOpen)
         {
             interactAnimation.SetBool("IsOpen", true);
 
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F) && !openObject.activeSelf)
             {
-                if (openObject.GetComponent<DialogueAnimator>())
+                openObject.gameObject.SetActive(true);
+
+                if (openObject.GetComponent<DialogueAnimator>() != null)
                 {
                     Debug.Log("Тут будет диалог, но мне его лень делать");
+                    openObject.GetComponent<DialogueAnimator>().Activate();
                 }
                 else
                 {
                     //Делать неебенную хуйню так шоб все ахуели
-                    openObject.gameObject.SetActive(true);
                     interactAnimation.SetBool("IsOpen", false);
                     Debug.Log("boom");
                     //А еще разрушать объект после этого
@@ -49,9 +55,10 @@ public class InteractableObject : MonoBehaviour, IInteractable
         else
         {
             interactAnimation.SetBool("IsOpen", false);
+            openObject.SetActive(false);
         }
-
-        if (openObject.gameObject.activeSelf)
+        
+        if (openObject.gameObject.activeSelf || isDialogueBoxOpen)
         {
             interactAnimation.SetBool("IsOpen", false);
         }
