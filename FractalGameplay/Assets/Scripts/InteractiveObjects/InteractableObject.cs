@@ -33,6 +33,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
         if (clldr.IsTouching(player.GetComponent<Collider2D>()) && !isDialogueBoxOpen)
         {
             interactAnimation.SetBool("IsOpen", true);
+            Debug.Log("Interact");
 
             if (Input.GetKeyDown(KeyCode.F) && !openObject.activeSelf)
             {
