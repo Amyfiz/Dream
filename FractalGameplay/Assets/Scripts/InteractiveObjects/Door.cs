@@ -9,13 +9,14 @@ public class Door : MonoBehaviour, IInteractable
     private Collider2D clldr;
     private Player player;
 
-    [SerializeField] Animator transition;
+    private Animator transition;
     [SerializeField] float transitionTime;
 
     void Awake()
     {
         clldr = gameObject.GetComponent<Collider2D>();
         player = GameObject.FindObjectOfType<Player>();
+        transition = GameObject.Find("Fade")?.GetComponent<Animator>();
     }
     
     void Update()
@@ -30,7 +31,6 @@ public class Door : MonoBehaviour, IInteractable
             TeleportPlayer();
         }
     }
-
 
     public void TeleportPlayer()
     {
