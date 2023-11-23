@@ -6,21 +6,49 @@ public class InteractableObject : MonoBehaviour, IInteractable
 {
     private Collider2D clldr;
     private Player player;
-    private GameObject openObject;
+    public GameObject openObject;
     private bool isDialogueBoxOpen;
-    
-    public Animator interactAnimation;
-    
+    private Animator interactAnimation;
+    private bool canInteract;
+
     void Awake()
     {
         clldr = gameObject.GetComponent<Collider2D>();
         player = FindObjectOfType<Player>();
+        interactAnimation = GameObject.Find("Interact")?.GetComponent<Animator>();
         openObject = transform.GetChild(0).gameObject;
     }
 
-    public void Update()
+    void Update()
     {
-        Interact();
+        if (canInteract && Input.GetKeyDown(KeyCode.F))
+        {
+            Interact();
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            canInteract = true;
+            interactAnimation.SetBool("IsOpen", true);
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            canInteract = false;
+            interactAnimation.SetBool("IsOpen", false);
+            openObject.SetActive(false);
+            
+            if (openObject.GetComponent<DialogueAnimator>() != null)
+            {
+                openObject.GetComponent<DialogueAnimator>().startAnimation.SetBool("IsOpen", false);
+            }
+        }
     }
 
     public void Interact()
@@ -29,41 +57,24 @@ public class InteractableObject : MonoBehaviour, IInteractable
         {
             isDialogueBoxOpen = openObject.GetComponent<DialogueAnimator>().startAnimation.GetBool("IsOpen");
         }
-        
-        if (clldr.IsTouching(player.GetComponent<Collider2D>()) && !isDialogueBoxOpen)
+
+        if (!isDialogueBoxOpen)
         {
-            interactAnimation.SetBool("IsOpen", true);
-            Debug.Log("Interact");
+            openObject.gameObject.SetActive(true);
+            Debug.Log("геймобджект активирован");
+            
+            interactAnimation.SetBool("IsOpen", false);
 
-            if (Input.GetKeyDown(KeyCode.F) && !openObject.activeSelf)
+            if (openObject.GetComponent<DialogueAnimator>() != null)
             {
-                openObject.gameObject.SetActive(true);
-
-                if (openObject.GetComponent<DialogueAnimator>() != null)
-                {
-                    Debug.Log("Тут будет диалог, но мне его лень делать");
-                    openObject.GetComponent<DialogueAnimator>().Activate();
-                }
-                else
-                {
-                    //Делать неебенную хуйню так шоб все ахуели
-                    interactAnimation.SetBool("IsOpen", false);
-                    Debug.Log("boom");
-                    //А еще разрушать объект после этого
-                }
+                openObject.GetComponent<DialogueAnimator>().Activate();
+                Debug.Log("открываем диалог");
+            }
+            else
+            {
+                Debug.Log("Закрываем Фку, открываем окошко");
+                //А еще разрушать объект после этого
             }
         }
-        else
-        {
-            interactAnimation.SetBool("IsOpen", false);
-            openObject.SetActive(false);
-        }
-        
-        if (openObject.gameObject.activeSelf || isDialogueBoxOpen)
-        {
-            interactAnimation.SetBool("IsOpen", false);
-        }
     }
-
-    
 }
