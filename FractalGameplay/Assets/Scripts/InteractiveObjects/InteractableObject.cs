@@ -4,7 +4,6 @@ using UnityEngine.Serialization;
 
 public class InteractableObject : MonoBehaviour, IInteractable
 {
-    private Collider2D clldr;
     private Player player;
     public GameObject openObject;
     private bool isDialogueBoxOpen;
@@ -13,7 +12,6 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     void Awake()
     {
-        clldr = gameObject.GetComponent<Collider2D>();
         player = FindObjectOfType<Player>();
         interactAnimation = GameObject.Find("Interact")?.GetComponent<Animator>();
         openObject = transform.GetChild(0).gameObject;
@@ -29,7 +27,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other == player.GetComponent<Collider2D>())
         {
             canInteract = true;
             interactAnimation.SetBool("IsOpen", true);
@@ -39,7 +37,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other == player.GetComponent<Collider2D>())
         {
             canInteract = false;
             interactAnimation.SetBool("IsOpen", false);
