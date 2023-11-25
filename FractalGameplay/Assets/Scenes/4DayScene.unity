@@ -982,6 +982,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openObject: {fileID: 0}
+  puzzleMenu: {fileID: 0}
+  backGround: {fileID: 0}
 --- !u!58 &259230250
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2581,6 +2583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openObject: {fileID: 0}
+  puzzleMenu: {fileID: 0}
+  backGround: {fileID: 0}
 --- !u!58 &862541748
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4342,6 +4346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openObject: {fileID: 0}
+  puzzleMenu: {fileID: 0}
+  backGround: {fileID: 0}
 --- !u!58 &1662812898
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4985,8 +4991,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1905404920}
   - component: {fileID: 1905404921}
-  - component: {fileID: 1905404922}
   - component: {fileID: 1905404923}
+  - component: {fileID: 1905404924}
   m_Layer: 0
   m_Name: windows
   m_TagString: Untagged
@@ -5064,21 +5070,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1905404922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1905404919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eec61805c7b7aa940882679b73cb8a13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  closeCurtains: {fileID: 965627917}
-  openCurtains: {fileID: 555940183}
-  breakCurtains: {fileID: 1874705360}
 --- !u!61 &1905404923
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5105,6 +5096,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 35.26204, y: 15.842014}
   m_EdgeRadius: 0
+--- !u!114 &1905404924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905404919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec61805c7b7aa940882679b73cb8a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeCurtains: {fileID: 965627917}
+  openCurtains: {fileID: 555940183}
+  breakCurtains: {fileID: 1874705360}
 --- !u!1 &1923267303
 GameObject:
   m_ObjectHideFlags: 0
@@ -5582,7 +5588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065197968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.415216, y: -21.455097, z: -10}
+  m_LocalPosition: {x: 150.11655, y: -21.237284, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
