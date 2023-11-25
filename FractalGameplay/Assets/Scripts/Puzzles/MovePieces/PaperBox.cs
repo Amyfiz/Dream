@@ -10,7 +10,7 @@ public class PaperBox : MonoBehaviour
 
     void Start()
     {
-     
+        Init();
     }
 
     private void Init()
@@ -18,9 +18,9 @@ public class PaperBox : MonoBehaviour
         int n = 0;
         for (int y = 2; y >= 0; y--)
         {
-            for (int x = 0; x <= 3; x++)
+            for (int x = 0; x < 3; x++)
             {
-                NumberBox box = Instantiate(boxPrefab, new Vector2(x, y), Quaternion.identity);
+                NumberBox box = Instantiate(boxPrefab, new Vector2(x, y), Quaternion.identity, GameObject.Find("PaperPuzzle").GetComponent<Transform>());
                 box.Init(x, y, n + 1, sprites[n], ClickToSwap);
                 boxes[x, y] = box;
                 n++;
