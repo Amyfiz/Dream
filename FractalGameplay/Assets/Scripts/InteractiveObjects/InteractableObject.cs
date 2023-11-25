@@ -9,6 +9,8 @@ public class InteractableObject : MonoBehaviour, IInteractable
     private bool isDialogueBoxOpen;
     private Animator interactAnimation;
     private bool canInteract;
+    public GameObject puzzleMenu;
+    public GameObject backGround;
 
     void Awake()
     {
@@ -21,6 +23,12 @@ public class InteractableObject : MonoBehaviour, IInteractable
     {
         if (canInteract && Input.GetKeyDown(KeyCode.F))
         {
+            if (puzzleMenu != null)
+            {
+                puzzleMenu.SetActive(true);
+                backGround.SetActive(true);
+            }
+
             Interact();
         }
     }
@@ -43,9 +51,16 @@ public class InteractableObject : MonoBehaviour, IInteractable
             interactAnimation.SetBool("IsOpen", false);
             openObject.SetActive(false);
             
+
             if (openObject.GetComponent<DialogueAnimator>() != null)
             {
                 openObject.GetComponent<DialogueAnimator>().startAnimation.SetBool("IsOpen", false);
+            }
+
+            if (puzzleMenu != null)
+            {
+                puzzleMenu.SetActive(false);
+                backGround.SetActive(false);
             }
         }
     }
