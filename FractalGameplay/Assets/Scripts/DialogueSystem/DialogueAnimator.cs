@@ -1,10 +1,16 @@
+using System;
 using DialogueSystem;
 using UnityEngine;
 
 public class DialogueAnimator : MonoBehaviour
 {
-    public Animator startAnimation;
+    [SerializeField] public Animator startAnimation;
     public DialogueEntity dialogueEntity;
+
+    private void Awake()
+    {
+        startAnimation = GameObject.Find("DialogueBox")?.GetComponent<Animator>();
+    }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
