@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Curtains : MonoBehaviour
@@ -11,7 +8,7 @@ public class Curtains : MonoBehaviour
     void Awake()
     {
         clldr = gameObject.GetComponent<Collider2D>();
-        player = GameObject.FindObjectOfType<Player>();
+        player = FindObjectOfType<Player>();
     }
     void Update()
     {
