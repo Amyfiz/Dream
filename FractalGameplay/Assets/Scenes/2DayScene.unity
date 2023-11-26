@@ -919,6 +919,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openObject: {fileID: 0}
+  puzzleMenu: {fileID: 0}
+  backGround: {fileID: 0}
 --- !u!1 &215247944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,6 +1527,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openObject: {fileID: 0}
+  puzzleMenu: {fileID: 0}
+  backGround: {fileID: 0}
 --- !u!58 &416370550
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2078,6 +2082,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openObject: {fileID: 0}
+  puzzleMenu: {fileID: 0}
+  backGround: {fileID: 0}
 --- !u!58 &593284789
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2332,7 +2338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605061229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.415216, y: -21.455097, z: -10}
+  m_LocalPosition: {x: 150.11655, y: -21.237284, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3456,6 +3462,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openObject: {fileID: 0}
+  puzzleMenu: {fileID: 0}
+  backGround: {fileID: 0}
 --- !u!1 &985784981
 GameObject:
   m_ObjectHideFlags: 0
@@ -4030,6 +4038,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openObject: {fileID: 0}
+  puzzleMenu: {fileID: 0}
+  backGround: {fileID: 0}
 --- !u!1001 &1215247608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4090,7 +4100,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightDoor
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 559845559870017887, guid: 14f8a56e28c70314db3918f3a821c96c, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 14f8a56e28c70314db3918f3a821c96c, type: 3}
 --- !u!4 &1215247609 stripped
@@ -4098,6 +4109,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 559845559870017888, guid: 14f8a56e28c70314db3918f3a821c96c, type: 3}
   m_PrefabInstance: {fileID: 1215247608}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1215247610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 559845559870017891, guid: 14f8a56e28c70314db3918f3a821c96c, type: 3}
+  m_PrefabInstance: {fileID: 1215247608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1215247611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215247610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9aeb17b9bae3664481b08f6cc70c920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1236602618
 GameObject:
   m_ObjectHideFlags: 0
@@ -4298,6 +4326,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openObject: {fileID: 0}
+  puzzleMenu: {fileID: 0}
+  backGround: {fileID: 0}
 --- !u!1 &1331646819
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,6 +4865,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openObject: {fileID: 0}
+  puzzleMenu: {fileID: 0}
+  backGround: {fileID: 0}
 --- !u!58 &1490509684
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5119,7 +5151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ConfineMode: 0
   m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 177258070}
+  m_BoundingShape2D: {fileID: 359881449}
   m_ConfineScreenEdges: 1
   m_Damping: 0
 --- !u!114 &1553262029

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using DialogueSystem;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 
 public class DialogueManager : MonoBehaviour
 {
@@ -79,11 +77,6 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        /*if (currentDialogueEntity.dialogueNumber == 10)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }*/
-        
         currentDialogueEntity = null;
         animator.SetBool(AnimatorConstants.IsOpen, false);
         StopAllCoroutines();
