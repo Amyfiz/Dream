@@ -1,34 +1,48 @@
 using System.Collections;
 using UnityEngine;
 
-public class Door : MonoBehaviour, IInteractable
+public class Door : MonoBehaviour
 {
     [SerializeField] int newX;
     [SerializeField] int newY;
 
-    private Collider2D clldr;
     private Player player;
+    private Animator interactAnimation;
+    private bool canInteract;
 
     private Animator transition;
     [SerializeField] float transitionTime;
 
     void Awake()
     {
-        clldr = gameObject.GetComponent<Collider2D>();
-        player = GameObject.FindObjectOfType<Player>();
+        player = FindObjectOfType<Player>();
         transition = GameObject.Find("Fade")?.GetComponent<Animator>();
+        interactAnimation = GameObject.Find("Interact")?.GetComponent<Animator>();
     }
     
     void Update()
     {
-        Interact();
-    }
-    
-    public void Interact()
-    {
-        if (clldr.IsTouching(player.GetComponent<Collider2D>()) && Input.GetKeyDown(KeyCode.F))
+        if (canInteract && Input.GetKeyDown(KeyCode.F))
         {
             TeleportPlayer();
+        }
+    }
+    
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other == player.GetComponent<Collider2D>())
+        {
+            canInteract = true;
+            interactAnimation.SetBool("IsOpen", true);
+        }
+    }
+    
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (other == player.GetComponent<Collider2D>())
+        {
+            canInteract = false;
+            interactAnimation.SetBool("IsOpen", false);
         }
     }
 
