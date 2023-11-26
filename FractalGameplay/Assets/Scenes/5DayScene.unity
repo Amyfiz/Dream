@@ -1907,7 +1907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startAnimation: {fileID: 0}
-  dialogueEntity: {fileID: 11400000, guid: 610e3609c8ff19948bea2cd6851fb0f2, type: 2}
+  dialogueEntity: {fileID: 11400000, guid: a4cd98e72de1781449075e0ccfc19c63, type: 2}
 --- !u!1 &934362027
 GameObject:
   m_ObjectHideFlags: 3
