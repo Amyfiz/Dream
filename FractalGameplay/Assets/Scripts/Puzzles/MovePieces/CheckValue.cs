@@ -8,13 +8,16 @@ public class CheckValue : MonoBehaviour
 {
     public TextMeshProUGUI text;
     public TMP_InputField userInputField;
-    public GameObject door;
+    public GameObject blockCollider;
+
+    
+
     public void Check()
     {
         if (userInputField.text == "67312")
         {
             text.text = "ÄËß ÑÊÀ×ÈÂÀÍÈß ÔÀÉËÀ ÂÂÅÄÈÒÅ ÏÀĞÎËÜ: ÂÅĞÍÎ";
-            door.GetComponent<Collider2D>().enabled = true;
+            blockCollider.GetComponent<Collider2D>().enabled = false;
         }
         else
         {

@@ -660,6 +660,64 @@ Transform:
   m_Father: {fileID: 265882464}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &152359053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152359054}
+  - component: {fileID: 152359055}
+  m_Layer: 0
+  m_Name: BlockPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &152359054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152359053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.6, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1408384859}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &152359055
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152359053}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.13510561}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 15.272111}
+  m_EdgeRadius: 0
 --- !u!1 &176771587
 GameObject:
   m_ObjectHideFlags: 0
@@ -3706,6 +3764,75 @@ MonoBehaviour:
   dialogueText: {fileID: 643236}
   animator: {fileID: 1062776634}
   currentDialogueEntity: {fileID: 0}
+--- !u!1 &909306409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 909306411}
+  - component: {fileID: 909306410}
+  - component: {fileID: 909306412}
+  m_Layer: 0
+  m_Name: PaperPuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &909306410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909306409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa365f01b5ae88343919303a6828b544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxPrefab: {fileID: 2675952956768149815, guid: af975530a49cbb549a498c85f7508157, type: 3}
+  sprites:
+  - {fileID: 1987259550, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
+  - {fileID: 1638224689, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
+  - {fileID: -260382552, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
+  - {fileID: -820952991, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
+  - {fileID: -2044717579, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
+  - {fileID: 1027467239, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
+  - {fileID: 1014642886, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
+  - {fileID: -782636132, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
+  - {fileID: 0}
+--- !u!224 &909306411
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909306409}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1408384859}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.2800026, y: 4.45}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &909306412
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909306409}
+  m_CullTransparentMesh: 1
 --- !u!1 &910799886
 GameObject:
   m_ObjectHideFlags: 0
@@ -5012,66 +5139,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1216822473
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1216822474}
-  - component: {fileID: 1216822475}
-  m_Layer: 5
-  m_Name: PaperPuzzle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1216822474
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216822473}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1408384859}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2, y: 4}
-  m_SizeDelta: {x: 1920, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1216822475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216822473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa365f01b5ae88343919303a6828b544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boxPrefab: {fileID: 2675952956768149815, guid: af975530a49cbb549a498c85f7508157, type: 3}
-  sprites:
-  - {fileID: 1987259550, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
-  - {fileID: 1014642886, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
-  - {fileID: -782636132, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
-  - {fileID: -260382552, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
-  - {fileID: -2044717579, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
-  - {fileID: 1027467239, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
-  - {fileID: 1638224689, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
-  - {fileID: -820952991, guid: 86124a3cc8a738448a8d03acf5acbf96, type: 3}
-  - {fileID: 0}
 --- !u!1 &1243170970
 GameObject:
   m_ObjectHideFlags: 0
@@ -5734,11 +5801,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1216822474}
+  - {fileID: 909306411}
   - {fileID: 1243170971}
   - {fileID: 1849678293}
   - {fileID: 827446644}
   - {fileID: 370405590}
+  - {fileID: 152359054}
   - {fileID: 1352329262}
   - {fileID: 240892830}
   - {fileID: 1748485618}
@@ -8066,8 +8134,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 559845559870017889, guid: 14f8a56e28c70314db3918f3a821c96c, type: 3}
+      propertyPath: m_Size.x
+      value: 4.89789
+      objectReference: {fileID: 0}
+    - target: {fileID: 559845559870017889, guid: 14f8a56e28c70314db3918f3a821c96c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 559845559870017889, guid: 14f8a56e28c70314db3918f3a821c96c, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.5510509
       objectReference: {fileID: 0}
     - target: {fileID: 559845559870017891, guid: 14f8a56e28c70314db3918f3a821c96c, type: 3}
       propertyPath: m_Name
@@ -8151,6 +8227,10 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 2004028571}
+    - target: {fileID: 123242949, guid: 0ded5e24ee6ac0947b9a91ee0bccd987, type: 3}
+      propertyPath: blockCollider
+      value: 
+      objectReference: {fileID: 152359053}
     - target: {fileID: 4386963297197962357, guid: 0ded5e24ee6ac0947b9a91ee0bccd987, type: 3}
       propertyPath: m_Name
       value: Canvas
