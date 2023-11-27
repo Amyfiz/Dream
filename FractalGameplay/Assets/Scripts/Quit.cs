@@ -14,7 +14,6 @@ public class Quit : MonoBehaviour
         if (other == player.GetComponent<Collider2D>())
         {
             Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
             Debug.Log("I quit...");
         }
     }
