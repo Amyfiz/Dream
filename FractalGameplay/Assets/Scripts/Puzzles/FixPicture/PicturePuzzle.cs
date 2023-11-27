@@ -2,6 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class PicturePuzzle : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class PicturePuzzle : MonoBehaviour
     public GameObject form;
 
     private bool isFinished;
+
+    private void Awake()
+    {
+        form.GetComponent<SpriteRenderer>().enabled = true;
+    }
 
     private void OnMouseDown()
     {
@@ -43,7 +49,7 @@ public class PicturePuzzle : MonoBehaviour
         if (isMoving && !isFinished)
         {
             mousePos = Input.mousePosition;
-            gameObject.transform.localPosition = new Vector2(mousePos.x - startPosX, mousePos.y - startPosY);
+            gameObject.transform.localPosition = new Vector2(mousePos.x - startPosX, mousePos.y - startPosY) * Time.deltaTime ;
         }
     }
 }
