@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class BedTP : MonoBehaviour
 {
     private Player player;
     private bool canInteract;
-    
+
+    public bool canTP;
     void Awake()
     {
         player = FindObjectOfType<Player>();
@@ -13,7 +14,7 @@ public class SceneLoader : MonoBehaviour
 
     void Update()
     {
-        if (canInteract && Input.GetKeyDown(KeyCode.F))
+        if (canInteract && Input.GetKeyDown(KeyCode.F) && canTP)
         {
             LoadScene();
         }

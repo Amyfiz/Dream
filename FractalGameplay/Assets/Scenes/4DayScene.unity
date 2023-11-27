@@ -1095,8 +1095,8 @@ GameObject:
   m_Component:
   - component: {fileID: 276335234}
   - component: {fileID: 276335235}
-  - component: {fileID: 276335237}
   - component: {fileID: 276335236}
+  - component: {fileID: 276335237}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -1206,7 +1206,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 276335233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9aeb17b9bae3664481b08f6cc70c920, type: 3}
+  m_Script: {fileID: 11500000, guid: cae262d8ab711e4439156f59ad001468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canTP: 0
