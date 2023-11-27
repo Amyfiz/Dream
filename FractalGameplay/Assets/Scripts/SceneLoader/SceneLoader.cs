@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +5,8 @@ public class SceneLoader : MonoBehaviour
 {
     private Player player;
     private bool canInteract;
+
+    public bool canTP;
     
     void Awake()
     {
@@ -15,7 +15,7 @@ public class SceneLoader : MonoBehaviour
 
     void Update()
     {
-        if (canInteract && Input.GetKeyDown(KeyCode.F))
+        if (canInteract && Input.GetKeyDown(KeyCode.F) && canTP)
         {
             LoadScene();
         }
@@ -26,6 +26,14 @@ public class SceneLoader : MonoBehaviour
         if (other == player.GetComponent<Collider2D>())
         {
             canInteract = true;
+        }
+    }
+    
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (other == player.GetComponent<Collider2D>())
+        {
+            canInteract = false;
         }
     }
 

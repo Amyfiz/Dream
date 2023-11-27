@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Plant
   m_EditorClassIdentifier: 
   destroyWhenActivated: 0
-  timeout: 0.1
+  timeout: 0.05
   sentences:
   - "... \u0442\u044B \u0442\u043E\u0436\u0435?.."
