@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FirstDialogue
   m_EditorClassIdentifier: 
   destroyWhenActivated: 1
-  timeout: 0.5
+  timeout: 0.3
   sentences:
   - . . .
