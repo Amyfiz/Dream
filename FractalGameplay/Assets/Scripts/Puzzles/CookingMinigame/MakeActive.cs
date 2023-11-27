@@ -14,7 +14,7 @@ public class MakeActive : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (clldr.IsTouching(player.GetComponent<Collider2D>()) && Input.GetKeyDown(KeyCode.F))
         {
             gameObject.SetActive(true);
         }
