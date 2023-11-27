@@ -7,14 +7,14 @@ public class SetCanTP : MonoBehaviour, IInteractable
     private bool isDialogueBoxOpen;
     private Animator interactAnimation;
     private bool canInteract;
-    private SceneLoader sceneLoader;
+    private BedTP bed;
 
     void Awake()
     {
         player = FindObjectOfType<Player>();
         interactAnimation = GameObject.Find("Interact")?.GetComponent<Animator>();
         openObject = transform.GetChild(0).gameObject;
-        sceneLoader = GameObject.Find("Bed")?.GetComponent<SceneLoader>();
+        bed = GameObject.Find("Bed")?.GetComponent<BedTP>();
     }
 
     void Update()
@@ -57,7 +57,7 @@ public class SetCanTP : MonoBehaviour, IInteractable
             isDialogueBoxOpen = openObject.GetComponent<DialogueAnimator>().startAnimation.GetBool("IsOpen");
         }
 
-        sceneLoader.canTP = true;
+        bed.canTP = true;
 
         if (!isDialogueBoxOpen)
         {
